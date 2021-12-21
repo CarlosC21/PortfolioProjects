@@ -56,6 +56,7 @@ Select location, MAX(cast(Total_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths
 -- Where location like '%Colombia%'
 Where continent is null 
+and location not in ('World','High income','Lower middle income','European Union','Low income','International','Upper middle income')
 Group by location
 order by TotalDeathCount desc
 
